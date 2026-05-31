@@ -1,0 +1,279 @@
+'use client';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  // Theme Sync on Mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    setTheme(initialTheme);
+    if (initialTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    if (nextTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const navLinks = [
+    {
+      label: 'About', href: '/about',
+      items: [
+        { label: 'About CDN', href: '/about' },
+        { label: 'Our Works', href: '/our-works' },
+        { label: 'Partners', href: '/about/partners' },
+        { label: 'How We Work?', href: '/about/how-we-work' },
+        { label: 'F.A.Qs', href: '/about/faqs' },
+      ]
+    },
+    {
+      label: 'Solutions', href: '/solutions',
+      items: [
+        { label: 'IoT Solutions', href: '/solutions/iot' },
+        { label: 'SaaS & AI Products', href: '/solutions/saas-ai' },
+        { label: 'Custom ERP / CRM', href: '/solutions/erp-crm' },
+        { label: 'Digital Transformation', href: '/solutions/digital-transformation' },
+      ]
+    },
+    {
+      label: 'Services', href: '/services',
+      items: [
+        { label: 'UI/UX Designs', href: '/services/ui-ux' },
+        { label: 'Android Apps', href: '/services/android' },
+        { label: 'iOS Apps', href: '/services/ios' },
+        { label: 'WordPress', href: '/services/wordpress' },
+        { label: 'SEO Branding', href: '/services/seo' },
+        { label: 'Social Marketing', href: '/services/social-marketing' },
+      ]
+    },
+    { label: 'Academy', href: '/academy', items: [] },
+    {
+      label: 'Insights', href: '/blog',
+      items: [
+        { label: 'Blog', href: '/blog' },
+        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Awards & Recognition', href: '/about/awards' },
+      ]
+    },
+    {
+      label: 'Careers', href: '/careers',
+      items: [
+        { label: 'Career Jobs', href: '/careers' },
+        { label: 'Internship Jobs', href: '/careers/internships' },
+      ]
+    },
+    { label: 'Contact Us', href: '/contact', items: [] },
+  ];
+
+  return (
+    <>
+      <header className="relative w-full z-50">
+        {/* Top Bar - TechXen Style */}
+        <div className="bg-[#f8f9fa] dark:bg-[#0a0f1c] py-2 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-[#4a4a52] dark:text-[#aeb3c4] text-xs font-semibold">
+            <div className="flex items-center gap-2">
+              CyberDude Networks Pvt. Ltd. — IoT & SAAS Product Company | Chennai, India
+            </div>
+            <div className="flex items-center gap-6 mt-2 sm:mt-0">
+              <a href="mailto:hello@cyberdudenetworks.com" className="hover:text-[#E47911] dark:hover:text-white transition-colors flex items-center gap-2">
+                <i className="fa-regular fa-envelope text-[#E47911]"></i> hello@cyberdudenetworks.com
+              </a>
+              <a href="tel:+919952913027" className="hover:text-[#E47911] dark:hover:text-white transition-colors flex items-center gap-2">
+                <i className="fa-solid fa-phone text-[#E47911]"></i> +91 99529 13027
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Navbar */}
+      <nav className={`w-full bg-white dark:bg-[#0a0f1c] border-b border-transparent dark:border-slate-800/30 transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-md z-[100] animate-fade-in' : 'relative'}`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-20" ref={dropdownRef}>
+            {/* Logo */}
+            <Link href="/" className="shrink-0 flex items-center">
+              <Image src="/cyberdude-logo.svg" alt="CyberDude Networks" width={160} height={40} className="h-9 w-auto" />
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center gap-1">
+              {navLinks.map((nav) => (
+                <div
+                  key={nav.label}
+                  className="relative group py-2"
+                  onMouseEnter={() => nav.items && nav.items.length > 0 && setActiveDropdown(nav.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <Link
+                    href={nav.href}
+                    className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-[#E47911] dark:hover:text-[#E47911] rounded-lg hover:bg-orange-50 dark:hover:bg-slate-800 transition-all duration-200"
+                    onClick={(e) => {
+                      if (nav.items && nav.items.length > 0) {
+                        setActiveDropdown(activeDropdown === nav.label ? null : nav.label);
+                      }
+                    }}
+                  >
+                    {nav.label}
+                    {nav.items && nav.items.length > 0 && <i className="fa fa-chevron-down text-[10px] mt-0.5 text-gray-400 transition-transform duration-200 group-hover:rotate-180"></i>}
+                  </Link>
+
+                  {nav.items && nav.items.length > 0 && (
+                    <div
+                      className={`absolute top-full left-0 mt-1 w-56 bg-white dark:bg-[#0e1628] rounded-xl shadow-xl border border-gray-100 dark:border-slate-800/80 py-2 transition-all duration-250 z-[100] ${
+                        activeDropdown === nav.label
+                          ? 'opacity-100 visible translate-y-0 scale-100 animate-dropdown'
+                          : 'opacity-0 invisible translate-y-2 scale-95 pointer-events-none'
+                      } group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100`}
+                    >
+                      {nav.items.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          target={item.href.startsWith('http') ? '_blank' : undefined}
+                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-600 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] hover:bg-orange-50 dark:hover:bg-slate-800/50 transition-colors"
+                        >
+                          <i className="fa fa-angle-right text-[#E47911] text-xs"></i>
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* CTA + Hamburger */}
+            <div className="flex items-center gap-3">
+              {/* Theme Toggle Button */}
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle Theme"
+                className="w-10 h-10 flex items-center justify-center cursor-pointer text-gray-700 dark:text-gray-300 hover:text-primary transition-colors rounded-lg  mr-1"
+              >
+                {theme === 'dark' ? (
+                  <i className="fa-solid fa-sun  text-yellow-500 text-base"></i>
+                ) : (
+                  <i className="fa-solid fa-moon text-gray-500 text-base"></i>
+                )}
+              </button>
+
+              <button className="text-gray-900 dark:text-gray-100 hover:text-primary transition-colors p-2">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <Link href="/contact" className="theme-btn1 hidden xl:inline-flex ml-2">
+                Get A Quote <i className="fa-solid fa-arrow-right"></i>
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden w-10 h-10 flex items-center justify-center text-gray-900 dark:text-gray-100 hover:text-[#E47911] rounded-lg border border-gray-100 dark:border-slate-800 ml-1"
+              >
+                <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'} text-xl`}></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden bg-white dark:bg-[#0a0f1c] border-t border-gray-100 dark:border-slate-800 ${mobileMenuOpen ? 'max-h-screen border-b shadow-lg' : 'max-h-0'}`}>
+          <div className="px-4 py-4 space-y-1">
+            {navLinks.map((nav) => (
+              <div key={nav.label} className="border-b border-gray-50 dark:border-slate-800/40 last:border-0 pb-1.5 pt-1">
+                <div className="flex items-center justify-between">
+                  <Link
+                    href={nav.items && nav.items.length > 0 ? '#' : nav.href}
+                    onClick={(e) => {
+                      if (nav.items && nav.items.length > 0) {
+                        e.preventDefault();
+                        setMobileActiveDropdown(mobileActiveDropdown === nav.label ? null : nav.label);
+                      } else {
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className="block px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-[#E47911] rounded-lg transition-colors flex-grow"
+                  >
+                    {nav.label}
+                  </Link>
+                  {nav.items && nav.items.length > 0 && (
+                    <button
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === nav.label ? null : nav.label)}
+                      className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#E47911]"
+                    >
+                      <i className={`fa-solid ${mobileActiveDropdown === nav.label ? 'fa-chevron-up' : 'fa-chevron-down'} text-xs`}></i>
+                    </button>
+                  )}
+                </div>
+
+                {nav.items && nav.items.length > 0 && (
+                  <div className={`ml-4 pl-3 border-l-2 border-orange-100 dark:border-slate-800 space-y-1 transition-all duration-300 overflow-hidden ${
+                    mobileActiveDropdown === nav.label ? 'max-h-96 opacity-100 py-1' : 'max-h-0 opacity-0 pointer-events-none'
+                  }`}>
+                    {nav.items.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-2 text-xs text-gray-500 dark:text-gray-400 hover:text-[#E47911] hover:bg-orange-50 dark:hover:bg-slate-800/40 rounded-lg transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="pt-4 px-3 pb-2">
+              <Link
+                href="/academy"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 bg-[#E47911] text-white px-4 py-3 rounded-lg text-sm font-semibold hover:bg-[#c4680d] transition-colors"
+              >
+                Learn Tech <i className="fa fa-arrow-right text-xs"></i>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+}

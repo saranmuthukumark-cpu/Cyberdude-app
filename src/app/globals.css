@@ -1,0 +1,123 @@
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --color-primary: #E47911;
+  --color-primary-hover: #c4680d;
+  --color-dark: #0a0f1c;
+  --color-darker: #05080f;
+  --font-sans: "Google Sans", var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #4a4a52; /* TechXen gray text */
+  --heading: #101010; /* TechXen dark heading */
+}
+
+.dark {
+  --background: #05080f;
+  --foreground: #aeb3c4;
+  --heading: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-family: "Google Sans", var(--font-plus-jakarta), sans-serif;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
+  font-family: "Google Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+
+/* Button Reset */
+.theme-btn1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 16px 30px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.theme-btn1:hover {
+  background-color: var(--heading);
+  color: #fff;
+}
+
+/* Preloader animation */
+@keyframes loadingLetter {
+  0% { opacity: 0; transform: translateY(-50px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(50px); }
+}
+
+.letters-loading {
+  display: inline-block;
+  animation: loadingLetter 2s infinite ease-in-out;
+}
+
+/* Minimal Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdownShow {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdownShow 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle fade in for page loads */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
