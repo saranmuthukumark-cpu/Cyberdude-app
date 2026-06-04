@@ -58,7 +58,7 @@ export default function BlogPage() {
               {blogs.map((b, idx) => (
                 <article
                   key={idx}
-                  className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group"
+                  className="blog-card p-8 group"
                 >
                   <div className="flex flex-wrap items-center gap-4 text-xs font-bold mb-4 text-[#E47911] uppercase tracking-wider">
                     <span className="bg-orange-50 dark:bg-slate-800 px-3 py-1 rounded-sm">{b.category}</span>
@@ -89,9 +89,9 @@ export default function BlogPage() {
 
                     <Link
                       href={`/blog/${idx}`}
-                      className="text-[#101010] dark:text-white font-bold uppercase text-xs tracking-wider group-hover:text-[#E47911] transition-colors flex items-center gap-1.5"
+                      className="learn-link"
                     >
-                      Read Full Article <i className="fa-solid fa-arrow-right text-[10px] text-[#E47911]"></i>
+                      Read Full Article <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>
                 </article>

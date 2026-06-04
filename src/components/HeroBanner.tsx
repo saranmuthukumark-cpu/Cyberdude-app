@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HeroBanner({
   title,
-  subtitle = "IoT & SAAS Product Company",
+  subtitle = "IoT & SaaS Product Company",
   currentPage,
   showStats = false
 }: {
@@ -13,39 +13,56 @@ export default function HeroBanner({
   showStats?: boolean;
 }) {
   return (
-    <section className="relative bg-[#f8f9fa] dark:bg-[#0a0f1c] py-16 md:py-20 border-b border-gray-200 dark:border-slate-800/40 transition-all duration-300">
-      <div className="relative max-w-7xl mx-auto px-4 text-center">
+    <section 
+      className="relative py-28 md:py-36 bg-cover bg-center overflow-hidden"
+      style={{ backgroundImage: 'url(https://cyberdudenetworks.com/assets/img/backgrounds/bg-home-fullscreen.jpg)' }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050810]/95 via-[#050810]/80 to-[#050810]/40" />
+
+      {/* Decorative grid */}
+      <div className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#E47911]/10 border border-[#E47911]/20 text-[#E47911] text-xs font-bold px-3 py-1 rounded-sm mb-4">
-          <i className="fa-solid fa-circle-check text-[10px]"></i>
-          {subtitle}
+        <div className="mb-6">
+          <span className="inline-flex items-center gap-2 text-[#E47911] font-semibold text-sm uppercase tracking-widest">
+            <span className="w-8 h-px bg-[#E47911]" />
+            {subtitle}
+            <span className="w-8 h-px bg-[#E47911]" />
+          </span>
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-bold text-[#101010] dark:text-white leading-tight mb-4 tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-8">
           {title}
         </h1>
 
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-2 text-sm text-[#4a4a52] dark:text-gray-400">
-          <Link href="/" className="hover:text-[#E47911] transition-colors flex items-center gap-1.5 font-semibold">
-            <i className="fa-solid fa-house text-[#E47911] text-xs"></i> Home
+        <nav aria-label="Breadcrumb" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[15px] font-medium text-white/70">
+          <Link href="/" className="hover:text-[#E47911] transition-colors flex items-center gap-2">
+            <i className="fa-solid fa-house text-[#E47911]"></i> Home
           </Link>
-          <i className="fa-solid fa-chevron-right text-[10px] text-gray-400 dark:text-gray-600"></i>
-          <span className="text-[#E47911] font-bold">{currentPage}</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+          <span className="text-white">{currentPage}</span>
         </nav>
 
         {/* Stats row */}
         {showStats && (
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { num: '18+', label: 'Happy Clients' },
-              { num: '35+', label: 'Projects Delivered' },
-              { num: '9+', label: 'Years Excellence' },
-              { num: '56+', label: 'Maintaining Projects' },
+              { num: '12+', label: 'Years Experience' },
+              { num: '500+', label: 'Projects Done' },
+              { num: '150+', label: 'Happy Clients' },
+              { num: '24/7', label: 'Support Available' },
             ].map((s) => (
-              <div key={s.label} className="bg-white dark:bg-[#0e1628] border border-gray-200 dark:border-slate-800 rounded-md px-4 py-5 shadow-sm">
-                <div className="text-2xl font-bold text-[#E47911]">{s.num}</div>
-                <div className="text-xs text-[#4a4a52] dark:text-gray-400 mt-1 font-semibold">{s.label}</div>
+              <div key={s.label} className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                <div className="text-3xl font-bold text-[#E47911] mb-2">{s.num}</div>
+                <div className="text-xs text-white/80 uppercase tracking-widest">{s.label}</div>
               </div>
             ))}
           </div>

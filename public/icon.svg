@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
+  <defs>
+    <style>
+      .cls-1 { fill: #fff; }
+      .cls-2 { fill: #fff; stroke: #1a1a1a; stroke-width: 30px; stroke-miterlimit: 10; }
+      .cls-3 { fill: #e25e3b; }
+    </style>
+  </defs>
+  <!-- Shift the entire icon slightly so it centers well in the 350x350 box -->
+  <g transform="translate(10, 10)">
+    <!-- The black background circle for the icon wasn't explicitly defined if the SVG relies on a dark background, but let's add it because the user's logo has a black circle background -->
+    <circle cx="150" cy="150" r="150" fill="#1a1a1a" />
+    
+    <!-- Original logo parts, adjusted to center inside our 300x300 circle -->
+    <g transform="translate(-40.88, -58.23)">
+      <circle class="cls-1" cx="190.88" cy="208.23" r="134.97"/>
+      <path class="cls-2" d="M364,308.76a47.22,47.22,0,0,1,19.86-38.52,91.5,91.5,0,1,0,24.78,85.69A47,47,0,0,1,364,308.76Z" transform="translate(-128 -127)"/>
+      <circle class="cls-3" cx="169.76" cy="213.78" r="30.2"/>
+      <circle class="cls-1" cx="170.01" cy="215.33" r="12.88"/>
+    </g>
+  </g>
+</svg>

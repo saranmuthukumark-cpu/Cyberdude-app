@@ -3,12 +3,15 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useTheme } from 'next-themes';
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,28 +32,12 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Theme Sync on Mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    localStorage.setItem('theme', nextTheme);
-    if (nextTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   const navLinks = [
@@ -106,31 +93,17 @@ export default function Header() {
   return (
     <>
       <header className="relative w-full z-50">
-        {/* Top Bar - TechXen Style */}
-        <div className="bg-[#f8f9fa] dark:bg-[#0a0f1c] py-2 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-[#4a4a52] dark:text-[#aeb3c4] text-xs font-semibold">
-            <div className="flex items-center gap-2">
-              CyberDude Networks Pvt. Ltd. — IoT & SAAS Product Company | Chennai, India
-            </div>
-            <div className="flex items-center gap-6 mt-2 sm:mt-0">
-              <a href="mailto:hello@cyberdudenetworks.com" className="hover:text-[#E47911] dark:hover:text-white transition-colors flex items-center gap-2">
-                <i className="fa-regular fa-envelope text-[#E47911]"></i> hello@cyberdudenetworks.com
-              </a>
-              <a href="tel:+919952913027" className="hover:text-[#E47911] dark:hover:text-white transition-colors flex items-center gap-2">
-                <i className="fa-solid fa-phone text-[#E47911]"></i> +91 99529 13027
-              </a>
-            </div>
-          </div>
-        </div>
+
       </header>
 
       {/* Navbar */}
-      <nav className={`w-full bg-white dark:bg-[#0a0f1c] border-b border-transparent dark:border-slate-800/30 transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-md z-[100] animate-fade-in' : 'relative'}`}>
+      <nav className={`w-full bg-white dark:bg-[#07091a] border-b border-[var(--border-color)] transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-xl shadow-black/10 dark:shadow-black/50 z-[100] animate-fade-in' : 'relative'}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20" ref={dropdownRef}>
             {/* Logo */}
             <Link href="/" className="shrink-0 flex items-center">
-              <Image src="/cyberdude-logo.svg" alt="CyberDude Networks" width={160} height={40} className="h-9 w-auto" />
+              <Image src="/cyberdude-logo-dark.svg" alt="CyberDude Networks" width={160} height={40} className="h-9 w-auto dark:hidden" priority />
+              <Image src="/cyberdude-logo.svg" alt="CyberDude Networks" width={160} height={40} className="h-9 w-auto hidden dark:block" priority />
             </Link>
 
             {/* Desktop Nav */}
@@ -144,7 +117,7 @@ export default function Header() {
                 >
                   <Link
                     href={nav.href}
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-[#E47911] dark:hover:text-[#E47911] rounded-lg hover:bg-orange-50 dark:hover:bg-slate-800 transition-all duration-200"
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] rounded-lg hover:bg-orange-50 dark:hover:bg-[#0e1628] transition-all duration-200"
                     onClick={(e) => {
                       if (nav.items && nav.items.length > 0) {
                         setActiveDropdown(activeDropdown === nav.label ? null : nav.label);
@@ -152,17 +125,19 @@ export default function Header() {
                     }}
                   >
                     {nav.label}
-                    {nav.items && nav.items.length > 0 && <i className="fa fa-chevron-down text-[10px] mt-0.5 text-gray-400 transition-transform duration-200 group-hover:rotate-180"></i>}
+                    {nav.items && nav.items.length > 0 && <i className="fa fa-chevron-down text-[9px] mt-0.5 text-gray-400 transition-transform duration-200 group-hover:rotate-180"></i>}
                   </Link>
 
                   {nav.items && nav.items.length > 0 && (
                     <div
-                      className={`absolute top-full left-0 mt-1 w-56 bg-white dark:bg-[#0e1628] rounded-xl shadow-xl border border-gray-100 dark:border-slate-800/80 py-2 transition-all duration-250 z-[100] ${
+                      className={`absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0e1628] rounded-xl shadow-2xl border border-[var(--border-color)] py-2 transition-all duration-250 z-[100] ${
                         activeDropdown === nav.label
                           ? 'opacity-100 visible translate-y-0 scale-100 animate-dropdown'
                           : 'opacity-0 invisible translate-y-2 scale-95 pointer-events-none'
                       } group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100`}
                     >
+                      {/* Invisible bridge to prevent hover gap */}
+                      <div className="absolute -top-4 left-0 w-full h-4 bg-transparent" />
                       {nav.items.map((item) => (
                         <Link
                           key={item.label}
@@ -187,19 +162,21 @@ export default function Header() {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle Theme"
-                className="w-10 h-10 flex items-center justify-center cursor-pointer text-gray-700 dark:text-gray-300 hover:text-primary transition-colors rounded-lg  mr-1"
+                className="w-10 h-10 flex items-center justify-center cursor-pointer text-gray-700 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] transition-colors rounded-lg mr-1"
               >
-                {theme === 'dark' ? (
-                  <i className="fa-solid fa-sun  text-yellow-500 text-base"></i>
-                ) : (
-                  <i className="fa-solid fa-moon text-gray-500 text-base"></i>
+                {mounted && (
+                  theme === 'dark' ? (
+                    <i className="fa-solid fa-sun text-yellow-500 text-base"></i>
+                  ) : (
+                    <i className="fa-solid fa-moon text-gray-500 text-base"></i>
+                  )
                 )}
               </button>
 
               <button className="text-gray-900 dark:text-gray-100 hover:text-primary transition-colors p-2">
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
-              <Link href="/contact" className="theme-btn1 hidden xl:inline-flex ml-2">
+              <Link href="/contact" className="theme-btn1 hidden xl:inline-flex ml-2 !py-3 !px-6 !text-[14px]">
                 Get A Quote <i className="fa-solid fa-arrow-right"></i>
               </Link>
               <button

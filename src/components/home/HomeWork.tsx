@@ -1,77 +1,85 @@
 export default function HomeWork() {
+  const points = [
+    {
+      icon: 'fa-solid fa-network-wired',
+      title: 'Network Infrastructure Solutions',
+      desc: 'Build a reliable and secure network infrastructure that supports your business operations and enables seamless collaboration.',
+    },
+    {
+      icon: 'fa-solid fa-headset',
+      title: 'Managed IT Services',
+      desc: 'Focus on your core business while we handle your IT needs with proactive monitoring, maintenance, and 24/7 support.',
+    },
+    {
+      icon: 'fa-solid fa-server',
+      title: 'Data Backup & Disaster Recovery',
+      desc: 'Protect your critical business data and ensure continuity with our automated backup and disaster recovery solutions.',
+    },
+  ];
+
   return (
-    <div className="py-24 bg-white">
+    <div className="section-py bg-white dark:bg-[#05080f] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Content */}
           <div>
-            <div className="mb-4">
-              <span className="inline-flex items-center gap-2 text-[#4a4a52] font-semibold text-sm">
-                <i className="fa fa-play text-[#E47911] text-[10px]"></i> Best It Solution
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-6 leading-tight">
-              Let's Elevate Your Business With Strategic IT Solutions
+            <span className="section-label">Best IT Solution</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[var(--heading)] mt-4 mb-5 leading-[1.15] heading-highlight">
+              Let's Elevate Your Business<br />With <span>Strategic IT</span>
             </h2>
-            <p className="text-[#4a4a52] mb-8">
-              At TechXen, we understand that every business is unique, which is why we offer a range of flexible IT solutions designed to address your specific challenges and goals.
+            <p className="text-[var(--foreground)] mb-10 text-[15px] leading-relaxed">
+              At CyberDude, we understand that every business is unique, which is why we offer flexible IT solutions designed to address your specific challenges and drive measurable results.
             </p>
 
-            <div className="space-y-6 mb-10">
-              
-              <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#fff4eb] flex items-center justify-center flex-shrink-0">
-                  <i className="fa-solid fa-network-wired text-[#E47911] text-xl"></i>
+            <div className="space-y-7 mb-10">
+              {points.map((p, i) => (
+                <div key={i} className="flex gap-5 group">
+                  <div className="icon-box flex-shrink-0 group-hover:bg-[#E47911] transition-all duration-300">
+                    <i className={`${p.icon} text-[#E47911] text-xl group-hover:text-white transition-colors duration-300`} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[var(--heading)] text-[16px] mb-2">{p.title}</h4>
+                    <p className="text-[var(--foreground)] text-[14px] leading-relaxed">{p.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-[#101010] text-lg mb-2">Network Infrastructure Solutions</h4>
-                  <p className="text-[#4a4a52] text-sm leading-relaxed">
-                    Build a reliable and secure network infrastructure that supports your business operations enables seamless
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#fff4eb] flex items-center justify-center flex-shrink-0">
-                  <i className="fa-solid fa-headset text-[#E47911] text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[#101010] text-lg mb-2">Managed It Services</h4>
-                  <p className="text-[#4a4a52] text-sm leading-relaxed">
-                    Focus on your core business activities while we take care of your IT needs with our managed IT services.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#fff4eb] flex items-center justify-center flex-shrink-0">
-                  <i className="fa-solid fa-server text-[#E47911] text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[#101010] text-lg mb-2">Data Backup & Disaster Recovery</h4>
-                  <p className="text-[#4a4a52] text-sm leading-relaxed">
-                    Protect your critical business data and ensure business continuity with our data backup and disaster solution.
-                  </p>
-                </div>
-              </div>
-
+              ))}
             </div>
 
-            <a href="#about" className="theme-btn1">
-              Discover More <i className="fa-solid fa-arrow-right"></i>
+            <a href="/about" className="theme-btn1">
+              Discover More <i className="fa-solid fa-arrow-right" />
             </a>
           </div>
 
-          <div className="relative h-[600px] hidden md:block">
-            {/* TechXen Work area image structure */}
-            <div className="absolute right-0 top-0 w-[48%] h-[48%]">
-              <img src="https://cyberdudenetworks.com/assets/img/portfolio/dic-management-software.png" alt="Work" className="w-full h-full object-cover rounded-md" />
+          {/* Image mosaic */}
+          <div className="relative h-[580px] hidden md:block">
+            {/* Top right */}
+            <div className="absolute right-0 top-0 w-[47%] h-[47%] rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://cyberdudenetworks.com/assets/img/portfolio/dic-management-software.png"
+                alt="Work 1"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
-            <div className="absolute right-0 bottom-0 w-[48%] h-[48%]">
-              <img src="https://cyberdudenetworks.com/assets/img/portfolio/selfmote-android-app.png" alt="Work" className="w-full h-full object-cover rounded-md" />
+            {/* Bottom right */}
+            <div className="absolute right-0 bottom-0 w-[47%] h-[47%] rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://cyberdudenetworks.com/assets/img/portfolio/selfmote-android-app.png"
+                alt="Work 2"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
-            <div className="absolute left-0 top-[10%] w-[48%] h-[80%]">
-              <img src="https://cyberdudenetworks.com/assets/img/portfolio/cybergym-management-software.png" alt="Work" className="w-full h-full object-cover rounded-md" />
+            {/* Left tall */}
+            <div className="absolute left-0 top-[8%] w-[47%] h-[84%] rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://cyberdudenetworks.com/assets/img/portfolio/cybergym-management-software.png"
+                alt="Work 3"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            {/* Orange corner accent */}
+            <div className="absolute right-[46%] top-[46%] w-12 h-12 bg-[#E47911] rounded-full flex items-center justify-center z-10 shadow-lg shadow-[#E47911]/30">
+              <i className="fa-solid fa-plus text-white text-lg" />
             </div>
           </div>
 

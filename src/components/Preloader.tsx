@@ -61,8 +61,6 @@ export default function Preloader() {
 
   if (!loading) return null;
 
-  const text = "CYBERDUDE";
-
   return (
     <div 
       className={`fixed inset-0 z-[9999] bg-white dark:bg-[#05080f] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
@@ -70,20 +68,15 @@ export default function Preloader() {
       }`}
     >
       <div className="relative flex flex-col items-center justify-center">
-        {/* Spinner */}
-        <div className="w-16 h-16 border-[3px] border-gray-100 dark:border-slate-800 border-t-[#E47911] rounded-full animate-spin mb-8"></div>
-        
-        {/* Text */}
-        <div className="flex gap-2 text-3xl font-bold text-[#E47911] tracking-widest uppercase overflow-hidden h-10">
-          {text.split('').map((letter, i) => (
-            <span 
-              key={i} 
-              className="letters-loading" 
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              {letter}
-            </span>
-          ))}
+        {/* Loading Image Wrapper */}
+        <div className="relative w-24 h-24 mb-4 flex items-center justify-center">
+          <img 
+            src="/icon.svg" 
+            alt="Loading..." 
+            className="w-16 h-16 object-contain animate-pulse z-10"
+          />
+          {/* Spinner around the image */}
+          <div className="absolute inset-0 w-full h-full border-[3px] border-gray-100 dark:border-slate-800 border-t-[#E47911] rounded-full animate-spin"></div>
         </div>
       </div>
     </div>

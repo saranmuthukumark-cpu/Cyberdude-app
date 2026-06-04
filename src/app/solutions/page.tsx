@@ -50,8 +50,8 @@ export default function SolutionsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="mb-4">
-              <span className="inline-flex items-center gap-2 text-[#4a4a52] dark:text-gray-300 font-semibold text-sm">
-                <i className="fa fa-play text-[#E47911] text-[10px]"></i> Enterprise Offerings
+              <span className="section-label">
+                <i className="fa-solid fa-building text-[10px]"></i> Enterprise Offerings
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#101010] dark:text-white leading-tight">
@@ -66,11 +66,11 @@ export default function SolutionsPage() {
             {solutions.map((sol) => (
               <div
                 key={sol.slug}
-                className="bg-white dark:bg-[#0e1628] p-8 md:p-10 rounded-md border border-gray-255/20 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex flex-col justify-between"
+                className="service-card group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full bg-[#fff4eb] dark:bg-slate-800 flex items-center justify-center shrink-0">
+                    <div className="icon-box">
                       <i className={`${sol.icon} text-[#E47911] text-2xl`}></i>
                     </div>
                     <h3 className="text-xl font-bold text-[#101010] dark:text-white group-hover:text-[#E47911] transition-colors leading-snug">
@@ -92,12 +92,12 @@ export default function SolutionsPage() {
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-gray-150 dark:border-slate-800/40 flex justify-between items-center">
+                <div className="pt-6 mt-auto flex justify-between items-center">
                   <Link
                     href={`/solutions/${sol.slug}`}
-                    className="text-[#101010] dark:text-white font-bold uppercase text-xs tracking-wider group-hover:text-[#E47911] transition-colors flex items-center gap-2"
+                    className="learn-link"
                   >
-                    View Case Study & Details <i className="fa-solid fa-arrow-right text-[#E47911]"></i>
+                    View Case Study & Details <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
               </div>

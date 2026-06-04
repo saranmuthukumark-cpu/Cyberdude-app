@@ -115,7 +115,7 @@ export default function AcademyPage() {
             {courses.map((course) => (
               <div
                 key={course.title}
-                className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex flex-col justify-between"
+                className="service-card group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4 border-b border-gray-100 dark:border-slate-800 pb-3">
