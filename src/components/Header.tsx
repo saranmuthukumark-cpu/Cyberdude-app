@@ -151,7 +151,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
 
 
-              <Link href="/contact" className="theme-btn1 hidden xl:inline-flex ml-2 !py-3 !px-6 !text-[14px]">
+              <Link href="/contact" className="theme-btn1 !hidden lg:!inline-flex ml-2 !py-3 !px-6 !text-[14px]">
                 Contact Us <i className="fa-solid fa-arrow-right"></i>
               </Link>
               <button
@@ -214,11 +214,18 @@ export default function Header() {
                 )}
               </div>
             ))}
-            <div className="pt-4 px-3 pb-2">
+            <div className="pt-4 px-3 pb-2 flex flex-col gap-3">
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 bg-[#E47911] text-white px-4 py-3 rounded-lg text-sm font-semibold hover:bg-[#c4680d] transition-colors"
+              >
+                Contact Us <i className="fa fa-arrow-right text-xs"></i>
+              </Link>
               <Link
                 href="/academy"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 bg-[#E47911] text-white px-4 py-3 rounded-lg text-sm font-semibold hover:bg-[#c4680d] transition-colors"
+                className="flex items-center justify-center gap-2 bg-transparent text-[#E47911] border-2 border-[#E47911] px-4 py-3 rounded-lg text-sm font-semibold hover:bg-orange-50 dark:hover:bg-[#E47911]/10 transition-colors"
               >
                 Learn Tech <i className="fa fa-arrow-right text-xs"></i>
               </Link>

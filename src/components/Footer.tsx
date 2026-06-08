@@ -46,12 +46,12 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-white dark:bg-black text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-white/5">
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-        <div className="text-[15vw] font-black text-black/10 dark:text-white/20 whitespace-nowrap">
+        <div className="text-[15vw] font-black text-black/15 dark:text-white/30 whitespace-nowrap">
           CYBER DUDE
         </div>
       </div>
       {/* Glassmorphic Overlay */}
-      <div className="absolute inset-0 backdrop-blur-sm bg-white/30 dark:bg-black/20 pointer-events-none z-0" />
+      <div className="absolute inset-0 backdrop-blur-[2px] bg-white/10 dark:bg-black/10 pointer-events-none z-0" />
 
       {/* Main footer */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
