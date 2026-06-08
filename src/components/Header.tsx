@@ -88,7 +88,7 @@ export default function Header() {
       </header>
 
       {/* Navbar */}
-      <nav className={`w-full bg-white dark:bg-black border-b border-[var(--border-color)] transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-xl shadow-black/10 dark:shadow-black/50 z-[100] animate-fade-in' : 'relative'}`}>
+      <nav className={`w-full transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-xl shadow-black/10 dark:shadow-black/50 border-b border-gray-200 dark:border-white/10 z-[100] animate-fade-in' : 'absolute top-0 left-0 bg-transparent border-b border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20" ref={dropdownRef}>
             {/* Logo */}
