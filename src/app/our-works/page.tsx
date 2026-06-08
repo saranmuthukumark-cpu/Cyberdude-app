@@ -56,7 +56,7 @@ const itemVariants: Variants = {
 
 export default function OurWorksPage() {
   return (
-    <div className="bg-white dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -146,7 +146,7 @@ export default function OurWorksPage() {
       </section>
 
       {/* Brand Marquee integrations */}
-      <section className="py-16 bg-gray-50 dark:bg-[#0a0f1c] border-y border-gray-200 dark:border-white/5 transition-colors duration-300">
+      <section className="py-16 bg-gray-50 dark:bg-[#1a1a1a] border-y border-gray-200 dark:border-white/5 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
           <h4 className="text-sm font-bold text-gray-500 tracking-widest uppercase">Trusted By Global Brands</h4>
         </div>

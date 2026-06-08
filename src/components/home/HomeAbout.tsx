@@ -1,6 +1,6 @@
 export default function HomeAbout() {
   return (
-    <div className="section-py bg-white dark:bg-[#05080f] transition-colors duration-300">
+    <div className="section-py bg-white dark:bg-[#111111] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -18,7 +18,7 @@ export default function HomeAbout() {
             </div>
 
             {/* Secondary image */}
-            <div className="absolute left-0 bottom-0 w-[55%] h-[52%] rounded-2xl overflow-hidden border-[6px] border-white dark:border-[#05080f] transition-colors duration-300 shadow-xl">
+            <div className="absolute left-0 bottom-0 w-[55%] h-[52%] rounded-2xl overflow-hidden border-[6px] border-white dark:border-[#111111] transition-colors duration-300 shadow-xl">
               <img
                 src="https://cyberdudenetworks.com/assets/img/portfolio/cyberhrm-management-software.png"
                 alt="CyberDude Team"
@@ -33,7 +33,7 @@ export default function HomeAbout() {
             </div>
 
             {/* Support badge */}
-            <div className="absolute right-4 bottom-[12%] bg-white dark:bg-[#0e1628] rounded-xl shadow-2xl border border-[var(--border-color)] p-4 flex items-center gap-3 z-10 transition-colors duration-300">
+            <div className="absolute right-4 bottom-[12%] bg-white dark:bg-[#222222] rounded-xl shadow-2xl border border-[var(--border-color)] p-4 flex items-center gap-3 z-10 transition-colors duration-300">
               <div className="w-10 h-10 rounded-lg bg-[rgba(228,121,17,0.12)] flex items-center justify-center">
                 <i className="fa-solid fa-headset text-[#E47911]" />
               </div>

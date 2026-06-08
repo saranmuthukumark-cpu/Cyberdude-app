@@ -67,7 +67,7 @@ export default function HomePricing() {
               className={`relative rounded-2xl p-8 border transition-all duration-350 ${
                 plan.popular
                   ? 'bg-gradient-to-b from-[#E47911] to-[#c4680d] border-transparent shadow-2xl shadow-[#E47911]/25 scale-[1.02]'
-                  : 'bg-white dark:bg-[#0e1628] border-[var(--border-color)] hover:border-[#E47911]/40 hover:-translate-y-1 hover:shadow-xl'
+                  : 'bg-white dark:bg-[#222222] border-[var(--border-color)] hover:border-[#E47911]/40 hover:-translate-y-1 hover:shadow-xl'
               }`}
             >
               {plan.popular && (
@@ -125,7 +125,7 @@ export default function HomePricing() {
                     : 'bg-[#E47911] text-white hover:bg-[#c4680d] shadow-lg shadow-[#E47911]/20'
                 }`}
               >
-                Get A Quote <i className="fa-solid fa-arrow-right" />
+                Contact Us <i className="fa-solid fa-arrow-right" />
               </a>
             </div>
           ))}

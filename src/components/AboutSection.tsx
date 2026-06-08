@@ -36,7 +36,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-[#05080f] border-b border-gray-200 dark:border-slate-800/40" ref={sectionRef}>
+    <section id="about" className="py-20 bg-white dark:bg-[#111111] border-b border-gray-200 dark:border-slate-800/40" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Images */}
@@ -62,7 +62,7 @@ export default function AboutSection() {
               </div>
             </div>
             {/* Flat support badge */}
-            <div className="absolute -bottom-4 left-4 bg-white dark:bg-[#0e1628] rounded-md shadow-sm px-4 py-3 flex items-center gap-3 border border-gray-200 dark:border-slate-800">
+            <div className="absolute -bottom-4 left-4 bg-white dark:bg-[#222222] rounded-md shadow-sm px-4 py-3 flex items-center gap-3 border border-gray-200 dark:border-slate-800">
               <div className="w-10 h-10 bg-orange-50 dark:bg-slate-800 rounded-md flex items-center justify-center text-[#E47911]">
                 <i className="fa-solid fa-headset text-lg"></i>
               </div>
@@ -112,7 +112,7 @@ export default function AboutSection() {
             </div>
 
             <a href="#contact" className="theme-btn1 mt-8">
-              Get A Quote <i className="fa-solid fa-arrow-right"></i>
+              Contact Us <i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>

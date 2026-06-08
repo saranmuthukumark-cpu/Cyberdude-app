@@ -31,7 +31,7 @@ const jobs = [
 
 export default function CareersPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -43,7 +43,7 @@ export default function CareersPage() {
       />
 
       {/* Culture Section */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -113,7 +113,7 @@ export default function CareersPage() {
             {jobs.map((job) => (
               <div
                 key={job.title}
-                className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group"
+                className="bg-white dark:bg-[#222222] p-8 rounded-md border border-gray-200 dark:border-slate-800 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group"
               >
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                   <h3 className="text-lg font-bold text-[#101010] dark:text-white group-hover:text-[#E47911] dark:group-hover:text-[#E47911] transition-colors">

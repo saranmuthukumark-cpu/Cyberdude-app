@@ -67,7 +67,7 @@ const itemVariants: Variants = {
 
 export default function ServicesPage() {
   return (
-    <div className="bg-white dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="group relative bg-white dark:bg-[#0e1628] rounded-2xl p-8 border border-gray-200 dark:border-white/5 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden flex flex-col h-full"
+                className="group relative bg-white dark:bg-[#222222] rounded-2xl p-8 border border-gray-200 dark:border-white/5 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden flex flex-col h-full"
               >
                 {/* Top highlight line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E47911] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -165,7 +165,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Delivery Process Roadmap */}
-      <section className="py-24 bg-gray-50 dark:bg-[#0a0f1c] relative overflow-hidden">
+      <section className="py-24 bg-gray-50 dark:bg-[#1a1a1a] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +201,7 @@ export default function ServicesPage() {
                 transition={{ delay: i * 0.15 }}
                 className="relative group text-center lg:text-left"
               >
-                <div className="w-20 h-20 mx-auto lg:mx-0 bg-white dark:bg-[#0e1628] rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 flex items-center justify-center text-3xl font-black text-[#E47911] mb-6 relative z-10 group-hover:-translate-y-2 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto lg:mx-0 bg-white dark:bg-[#222222] rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 flex items-center justify-center text-3xl font-black text-[#E47911] mb-6 relative z-10 group-hover:-translate-y-2 transition-transform duration-300">
                   {p.step}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{p.title}</h3>

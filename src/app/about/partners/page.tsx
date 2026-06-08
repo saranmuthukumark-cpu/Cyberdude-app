@@ -3,7 +3,7 @@ import HeroBanner from '@/components/HeroBanner';
 import BrandMarquee from '@/components/BrandMarquee';
 import Link from 'next/link';export default function PartnersPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -15,7 +15,7 @@ import Link from 'next/link';export default function PartnersPage() {
       />
 
       {/* Alliance Intro */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -63,7 +63,7 @@ import Link from 'next/link';export default function PartnersPage() {
       </section>
 
       {/* Brand Marquee integrations */}
-      <section className="py-20 bg-[#f8f9fa] dark:bg-[#05080f] border-t border-b border-gray-200 dark:border-slate-800 transition-colors duration-300">
+      <section className="py-20 bg-[#f8f9fa] dark:bg-[#111111] border-t border-b border-gray-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-extrabold text-[#101010] dark:text-white mb-8 font-sans">Trusted by Global Corporations</h2>
           <BrandMarquee />
@@ -71,7 +71,7 @@ import Link from 'next/link';export default function PartnersPage() {
       </section>
 
       {/* Call to action */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#101010] dark:text-white">Become a Technology Partner</h2>
           <p className="text-sm text-[#4a4a52] dark:text-gray-300 leading-relaxed font-semibold">

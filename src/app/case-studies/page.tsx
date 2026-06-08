@@ -27,7 +27,7 @@ const cases = [
 ];
 export default function CaseStudiesPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
             {cases.map((c, idx) => (
               <div
                 key={idx}
-                className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group"
+                className="bg-white dark:bg-[#222222] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group"
               >
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                   <span className="px-2.5 py-1 bg-[#fff4eb] dark:bg-slate-850 text-[#E47911] rounded-sm text-[10px] font-bold">{c.category}</span>

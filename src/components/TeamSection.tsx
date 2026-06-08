@@ -17,7 +17,7 @@ const team = [
     name: 'Tech Lead',
     role: 'Chief Technology Officer',
     initials: 'TL',
-    color: 'bg-gray-100 text-gray-700 dark:bg-[#05080f] dark:text-gray-300',
+    color: 'bg-gray-100 text-gray-700 dark:bg-[#111111] dark:text-gray-300',
     socials: [
       { icon: 'fab fa-linkedin-in', href: '#' },
       { icon: 'fab fa-x-twitter', href: '#' },
@@ -28,7 +28,7 @@ const team = [
     name: 'Design Lead',
     role: 'Head of UI/UX Design',
     initials: 'DL',
-    color: 'bg-gray-100 text-gray-700 dark:bg-[#05080f] dark:text-gray-300',
+    color: 'bg-gray-100 text-gray-700 dark:bg-[#111111] dark:text-gray-300',
     socials: [
       { icon: 'fab fa-linkedin-in', href: '#' },
       { icon: 'fab fa-figma', href: '#' },
@@ -39,7 +39,7 @@ const team = [
     name: 'Dev Lead',
     role: 'Lead Software Engineer',
     initials: 'DV',
-    color: 'bg-gray-100 text-gray-700 dark:bg-[#05080f] dark:text-gray-300',
+    color: 'bg-gray-100 text-gray-700 dark:bg-[#111111] dark:text-gray-300',
     socials: [
       { icon: 'fab fa-linkedin-in', href: '#' },
       { icon: 'fab fa-github', href: '#' },
@@ -50,7 +50,7 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40">
+    <section className="py-20 bg-gray-50 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="mb-4">
@@ -70,14 +70,14 @@ export default function TeamSection() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="bg-white dark:bg-[#0e1628] rounded-md overflow-hidden border border-gray-200 dark:border-slate-800/80 shadow-sm"
+              className="bg-white dark:bg-[#222222] rounded-md overflow-hidden border border-gray-200 dark:border-slate-800/80 shadow-sm"
             >
               {/* Profile initials container */}
               <div className={`h-48 ${member.color} flex items-center justify-center relative group`}>
                 <span className="text-5xl font-extrabold select-none">{member.initials}</span>
 
                 {/* Social hover trigger */}
-                <div className="absolute inset-0 bg-[#0a0f1c]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                <div className="absolute inset-0 bg-[#1a1a1a]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
                   {member.socials.map((s, idx) => (
                     <a
                       key={idx}

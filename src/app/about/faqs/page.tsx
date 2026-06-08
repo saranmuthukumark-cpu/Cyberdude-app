@@ -33,7 +33,7 @@ export default function FaqsPage() {
   };
 
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -64,7 +64,7 @@ export default function FaqsPage() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="bg-white dark:bg-[#0e1628] rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm overflow-hidden transition-all duration-300"
+              className="bg-white dark:bg-[#222222] rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm overflow-hidden transition-all duration-300"
             >
               <button
                 onClick={() => toggleFaq(idx)}
@@ -93,7 +93,7 @@ export default function FaqsPage() {
       </section>
 
       {/* Direct support CTA */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-t border-gray-200 dark:border-slate-800 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#101010] dark:text-white">Still Have Questions?</h2>
           <p className="text-sm text-[#4a4a52] dark:text-gray-300 leading-relaxed font-semibold">

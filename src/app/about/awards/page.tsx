@@ -24,7 +24,7 @@ const awards = [
 ];
 export default function AwardsPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -36,7 +36,7 @@ export default function AwardsPage() {
       />
 
       {/* Awards Intro */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -101,7 +101,7 @@ export default function AwardsPage() {
             {awards.map((a) => (
               <div
                 key={a.title}
-                className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex flex-col sm:flex-row gap-6 items-start"
+                className="bg-white dark:bg-[#222222] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex flex-col sm:flex-row gap-6 items-start"
               >
                 <div className="text-4xl font-extrabold text-[#E47911] bg-[#fff4eb] dark:bg-slate-850 w-16 h-16 rounded-sm flex items-center justify-center shrink-0">
                   {a.year}
@@ -118,7 +118,7 @@ export default function AwardsPage() {
       </section>
 
       {/* Direct support CTA */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-t border-gray-200 dark:border-slate-800 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-slate-800 transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#101010] dark:text-white">Let's Build the Next Award-Winning Product!</h2>
           <p className="text-sm text-[#4a4a52] dark:text-gray-300 leading-relaxed font-semibold">

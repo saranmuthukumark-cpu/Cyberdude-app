@@ -35,7 +35,7 @@ const courses = [
 
 export default function AcademyPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20">
       <HeroBanner
         title={
           <>
@@ -47,7 +47,7 @@ export default function AcademyPage() {
       />
 
       {/* Intro section */}
-      <section className="py-20 bg-white dark:bg-[#05080f] border-b border-gray-200 dark:border-slate-800/40">
+      <section className="py-20 bg-white dark:bg-[#111111] border-b border-gray-200 dark:border-slate-800/40">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -132,7 +132,7 @@ export default function AcademyPage() {
                   <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Syllabus Highlights</h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {course.topics.map((t) => (
-                      <span key={t} className="px-3 py-1.5 bg-[#f8f9fa] dark:bg-[#0a0f1c] border border-gray-150 dark:border-slate-800 text-gray-600 dark:text-gray-300 rounded-sm text-xs font-bold">
+                      <span key={t} className="px-3 py-1.5 bg-[#f8f9fa] dark:bg-[#1a1a1a] border border-gray-150 dark:border-slate-800 text-gray-600 dark:text-gray-300 rounded-sm text-xs font-bold">
                         {t}
                       </span>
                     ))}
@@ -154,7 +154,7 @@ export default function AcademyPage() {
       </section>
 
       {/* GitHub section */}
-      <section className="py-16 bg-white dark:bg-[#0a0f1c] border-t border-gray-200 dark:border-slate-800/40 text-center">
+      <section className="py-16 bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-slate-800/40 text-center">
         <div className="max-w-2xl mx-auto px-4 space-y-4">
           <i className="fa-brands fa-github text-5xl text-[#101010] dark:text-white"></i>
           <h2 className="text-2xl md:text-3xl font-bold text-[#101010] dark:text-white">

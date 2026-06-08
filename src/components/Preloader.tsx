@@ -63,7 +63,7 @@ export default function Preloader() {
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] bg-white dark:bg-[#05080f] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
+      className={`fixed inset-0 z-[9999] bg-white dark:bg-[#111111] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
         hiding ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
       }`}
     >

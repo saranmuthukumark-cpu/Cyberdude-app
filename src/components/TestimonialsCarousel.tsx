@@ -48,7 +48,7 @@ export default function TestimonialsCarousel() {
     <div
       className="section-py relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #050810 0%, #0a1020 100%)',
+        background: 'linear-gradient(135deg, #111111 0%, #1a1a1a 100%)',
       }}
     >
       {/* Background pattern */}
@@ -80,7 +80,7 @@ export default function TestimonialsCarousel() {
               className={`rounded-2xl border transition-all duration-400 p-8 ${
                 i === 0
                   ? 'bg-[#E47911] border-[#E47911] shadow-xl shadow-[#E47911]/20'
-                  : 'bg-[#0e1628] border-white/05'
+                  : 'bg-[#222222] border-white/05'
               }`}
             >
               {/* Stars */}

@@ -53,15 +53,9 @@ export default function HomeHero() {
         style={{ backgroundImage: `url(${slide.bg})` }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050810]/92 via-[#050810]/75 to-[#050810]/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/92 via-[#111111]/75 to-[#111111]/40" />
 
-      {/* Decorative grid */}
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }}
-      />
+
 
       {/* Decorative shape */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">

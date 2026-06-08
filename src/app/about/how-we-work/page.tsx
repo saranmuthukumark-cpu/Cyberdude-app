@@ -27,7 +27,7 @@ const steps = [
 
 export default function HowWeWorkPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -39,7 +39,7 @@ export default function HowWeWorkPage() {
       />
 
       {/* Engineering Philosophy */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -87,7 +87,7 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* Workflow steps */}
-      <section className="py-20 bg-[#f8f9fa] dark:bg-[#05080f] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-[#f8f9fa] dark:bg-[#111111] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="mb-4">
@@ -104,7 +104,7 @@ export default function HowWeWorkPage() {
             {steps.map((s) => (
               <div
                 key={s.step}
-                className="bg-white dark:bg-[#0e1628] p-8 rounded-md border border-gray-200 dark:border-slate-800 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex items-start gap-5"
+                className="bg-white dark:bg-[#222222] p-8 rounded-md border border-gray-200 dark:border-slate-800 shadow-sm hover:border-[#E47911] dark:hover:border-[#E47911] transition-all duration-300 group flex items-start gap-5"
               >
                 <div className="text-3xl font-extrabold text-[#E47911] bg-[#fff4eb] dark:bg-slate-850 w-12 h-12 rounded-sm flex items-center justify-center shrink-0">
                   {s.step}
@@ -120,7 +120,7 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* Direct prompt */}
-      <section className="py-20 bg-white dark:bg-[#0a0f1c] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-slate-800/40 transition-colors duration-300">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#101010] dark:text-white">Ready to Kickstart Your Project?</h2>
           <p className="text-sm text-[#4a4a52] dark:text-gray-300 leading-relaxed font-semibold">

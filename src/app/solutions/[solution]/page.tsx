@@ -78,7 +78,7 @@ export default async function SolutionDetailPage({
   }
 
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20">
       <HeroBanner
         title={solution.title}
         currentPage={`Solutions / ${solution.title}`}
@@ -88,7 +88,7 @@ export default async function SolutionDetailPage({
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main content */}
-          <div className="lg:col-span-2 space-y-8 bg-white dark:bg-[#0e1628] p-8 md:p-10 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
+          <div className="lg:col-span-2 space-y-8 bg-white dark:bg-[#222222] p-8 md:p-10 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
             <div className="flex items-center gap-4 border-b border-gray-150 dark:border-slate-800 pb-5">
               <div className="w-14 h-14 rounded-full bg-[#fff4eb] dark:bg-slate-850 flex items-center justify-center text-[#E47911] shrink-0">
                 <i className={`${solution.icon} text-2xl`}></i>
@@ -107,7 +107,7 @@ export default async function SolutionDetailPage({
               <h3 className="text-lg font-bold text-[#101010] dark:text-white mb-4 border-b border-gray-100 dark:border-slate-800 pb-2">Core Architectural Capabilities</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {solution.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-[#f8f9fa] dark:bg-[#0a0f1c] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
+                  <div key={idx} className="flex items-start gap-3 bg-[#f8f9fa] dark:bg-[#1a1a1a] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
                     <span className="text-[#E47911] mt-0.5"><i className="fa-solid fa-check text-xs"></i></span>
                     <span className="text-xs text-gray-700 dark:text-gray-300 font-bold leading-relaxed">{feat}</span>
                   </div>
@@ -119,7 +119,7 @@ export default async function SolutionDetailPage({
               <h3 className="text-lg font-bold text-[#101010] dark:text-white mb-4 border-b border-gray-100 dark:border-slate-800 pb-2">Real-World Case Demonstrations</h3>
               <div className="space-y-3">
                 {solution.cases.map((cName, idx) => (
-                  <div key={idx} className="flex items-center gap-3 bg-[#f8f9fa] dark:bg-[#0a0f1c] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
+                  <div key={idx} className="flex items-center gap-3 bg-[#f8f9fa] dark:bg-[#1a1a1a] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
                     <div className="w-6 h-6 rounded-sm bg-[#E47911] text-white flex items-center justify-center text-xs font-bold shrink-0">
                       {idx + 1}
                     </div>
@@ -133,7 +133,7 @@ export default async function SolutionDetailPage({
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Quick Links */}
-            <div className="bg-white dark:bg-[#0e1628] p-6 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
+            <div className="bg-white dark:bg-[#222222] p-6 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
               <h3 className="text-base font-bold text-[#101010] dark:text-white mb-4 pb-2 border-b border-gray-150 dark:border-slate-800">Other Solutions</h3>
               <div className="space-y-2">
                 {Object.entries(solutionsData).map(([sSlug, sData]) => (
@@ -143,7 +143,7 @@ export default async function SolutionDetailPage({
                     className={`flex items-center justify-between px-4 py-3 rounded-md text-xs font-bold transition-all border ${
                       sSlug === slug
                         ? 'bg-[#E47911] text-white border-[#E47911]'
-                        : 'bg-[#f8f9fa] dark:bg-[#0a0f1c] text-[#4a4a52] dark:text-gray-300 border-gray-200 dark:border-slate-800 hover:border-[#E47911] hover:text-[#E47911]'
+                        : 'bg-[#f8f9fa] dark:bg-[#1a1a1a] text-[#4a4a52] dark:text-gray-300 border-gray-200 dark:border-slate-800 hover:border-[#E47911] hover:text-[#E47911]'
                     }`}
                   >
                     <span>{sData.title}</span>
@@ -154,7 +154,7 @@ export default async function SolutionDetailPage({
             </div>
 
             {/* Quick CTA */}
-            <div className="bg-[#0a0f1c] dark:bg-[#0e1628] p-8 rounded-md text-center text-white relative border border-transparent dark:border-slate-800/80">
+            <div className="bg-[#1a1a1a] dark:bg-[#222222] p-8 rounded-md text-center text-white relative border border-transparent dark:border-slate-800/80">
               <i className="fa-solid fa-headset text-4xl text-[#E47911] mb-4"></i>
               <h3 className="text-lg font-bold mb-2">Request Custom Prototype?</h3>
               <p className="text-xs text-gray-400 dark:text-gray-400 mb-6 leading-relaxed">

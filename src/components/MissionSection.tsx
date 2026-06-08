@@ -1,6 +1,6 @@
 export default function MissionSection() {
   return (
-    <section className="py-20 bg-white dark:bg-[#05080f] relative overflow-hidden transition-all duration-300">
+    <section className="py-20 bg-white dark:bg-[#111111] relative overflow-hidden transition-all duration-300">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#E47911]/10 rounded-full blur-[120px]"></div>
@@ -42,7 +42,7 @@ export default function MissionSection() {
             </div>
 
             <a href="#contact" className="inline-flex items-center gap-2 bg-[#E47911] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-[#c4680d] transition-colors shadow-lg shadow-orange-900/10 dark:shadow-none">
-              Get A Quote <i className="fa-solid fa-arrow-right text-xs"></i>
+              Contact Us <i className="fa-solid fa-arrow-right text-xs"></i>
             </a>
           </div>
 

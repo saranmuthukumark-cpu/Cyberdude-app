@@ -3,15 +3,13 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useTheme } from 'next-themes';
+
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,13 +30,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const navLinks = [
     {
@@ -87,7 +79,6 @@ export default function Header() {
         { label: 'Internship Jobs', href: '/careers/internships' },
       ]
     },
-    { label: 'Contact Us', href: '/contact', items: [] },
   ];
 
   return (
@@ -97,7 +88,7 @@ export default function Header() {
       </header>
 
       {/* Navbar */}
-      <nav className={`w-full bg-white dark:bg-[#07091a] border-b border-[var(--border-color)] transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-xl shadow-black/10 dark:shadow-black/50 z-[100] animate-fade-in' : 'relative'}`}>
+      <nav className={`w-full bg-white dark:bg-black border-b border-[var(--border-color)] transition-all duration-300 z-50 ${scrolled ? 'fixed top-0 shadow-xl shadow-black/10 dark:shadow-black/50 z-[100] animate-fade-in' : 'relative'}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20" ref={dropdownRef}>
             {/* Logo */}
@@ -117,7 +108,7 @@ export default function Header() {
                 >
                   <Link
                     href={nav.href}
-                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] rounded-lg hover:bg-orange-50 dark:hover:bg-[#0e1628] transition-all duration-200"
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] rounded-lg hover:bg-orange-50 dark:hover:bg-zinc-900 transition-all duration-200"
                     onClick={(e) => {
                       if (nav.items && nav.items.length > 0) {
                         setActiveDropdown(activeDropdown === nav.label ? null : nav.label);
@@ -130,7 +121,7 @@ export default function Header() {
 
                   {nav.items && nav.items.length > 0 && (
                     <div
-                      className={`absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0e1628] rounded-xl shadow-2xl border border-[var(--border-color)] py-2 transition-all duration-250 z-[100] ${
+                      className={`absolute top-full left-0 mt-2 w-56 bg-white dark:bg-black rounded-xl shadow-2xl border border-[var(--border-color)] py-2 transition-all duration-250 z-[100] ${
                         activeDropdown === nav.label
                           ? 'opacity-100 visible translate-y-0 scale-100 animate-dropdown'
                           : 'opacity-0 invisible translate-y-2 scale-95 pointer-events-none'
@@ -158,26 +149,10 @@ export default function Header() {
 
             {/* CTA + Hamburger */}
             <div className="flex items-center gap-3">
-              {/* Theme Toggle Button */}
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle Theme"
-                className="w-10 h-10 flex items-center justify-center cursor-pointer text-gray-700 dark:text-gray-300 hover:text-[#E47911] dark:hover:text-[#E47911] transition-colors rounded-lg mr-1"
-              >
-                {mounted && (
-                  theme === 'dark' ? (
-                    <i className="fa-solid fa-sun text-yellow-500 text-base"></i>
-                  ) : (
-                    <i className="fa-solid fa-moon text-gray-500 text-base"></i>
-                  )
-                )}
-              </button>
 
-              <button className="text-gray-900 dark:text-gray-100 hover:text-primary transition-colors p-2">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
+
               <Link href="/contact" className="theme-btn1 hidden xl:inline-flex ml-2 !py-3 !px-6 !text-[14px]">
-                Get A Quote <i className="fa-solid fa-arrow-right"></i>
+                Contact Us <i className="fa-solid fa-arrow-right"></i>
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -190,7 +165,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden bg-white dark:bg-[#0a0f1c] border-t border-gray-100 dark:border-slate-800 ${mobileMenuOpen ? 'max-h-screen border-b shadow-lg' : 'max-h-0'}`}>
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden bg-white dark:bg-black border-t border-gray-100 dark:border-slate-800 ${mobileMenuOpen ? 'max-h-screen border-b shadow-lg' : 'max-h-0'}`}>
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((nav) => (
               <div key={nav.label} className="border-b border-gray-50 dark:border-slate-800/40 last:border-0 pb-1.5 pt-1">

@@ -22,7 +22,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20 transition-colors duration-300">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20 transition-colors duration-300">
       <HeroBanner
         title={
           <>
@@ -39,7 +39,7 @@ export default function ContactPage() {
             
             {/* Contact Info column */}
             <div className="space-y-6 lg:col-span-1">
-              <div className="bg-[#0e1628] text-white p-8 rounded-md relative overflow-hidden border border-slate-800/80 shadow-md">
+              <div className="bg-[#222222] text-white p-8 rounded-md relative overflow-hidden border border-slate-800/80 shadow-md">
                 <div className="absolute inset-0 pointer-events-none opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage:'radial-gradient(circle, #E47911 1px, transparent 1px)', backgroundSize:'30px 30px'}}></div>
                 </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               </div>
 
               {/* Operational Hours */}
-              <div className="bg-white dark:bg-[#0a0f1c] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm transition-colors duration-300">
+              <div className="bg-white dark:bg-[#1a1a1a] p-8 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm transition-colors duration-300">
                 <h3 className="text-base font-bold text-[#101010] dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-slate-800/80">Operational Hours</h3>
                 <ul className="space-y-3">
                   {[
@@ -113,7 +113,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form column */}
-            <div className="lg:col-span-2 bg-white dark:bg-[#0a0f1c] p-8 md:p-12 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm transition-colors duration-300">
+            <div className="lg:col-span-2 bg-white dark:bg-[#1a1a1a] p-8 md:p-12 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm transition-colors duration-300">
               <div className="mb-4">
                 <span className="inline-flex items-center gap-2 bg-[#fff4eb] dark:bg-slate-800 text-[#E47911] text-xs font-semibold px-3 py-1 rounded-sm">
                   <i className="fa fa-envelope text-[10px]"></i> Send Message
@@ -140,7 +140,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#0a0f1c] transition-colors"
+                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#1a1a1a] transition-colors"
                       />
                     </div>
                     <div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="hello@company.com"
-                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#0a0f1c] transition-colors"
+                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#1a1a1a] transition-colors"
                       />
                     </div>
                   </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#0a0f1c] transition-colors"
+                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#1a1a1a] transition-colors"
                       />
                     </div>
                     <div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         placeholder="Quote Request / Partnerships"
-                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#0a0f1c] transition-colors"
+                        className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#1a1a1a] transition-colors"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Outline your project scope or business targets here..."
-                      className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#0a0f1c] transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#f8f9fa] dark:bg-[#131b2e] border border-gray-200 dark:border-slate-800 rounded-sm text-xs text-[#101010] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-[#E47911] dark:focus:border-[#E47911] focus:bg-white dark:focus:bg-[#1a1a1a] transition-colors resize-none"
                     ></textarea>
                   </div>
 

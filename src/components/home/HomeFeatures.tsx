@@ -7,7 +7,7 @@ export default function HomeFeatures() {
   ];
 
   return (
-    <div className="bg-white dark:bg-[#0a0f1c] py-0 border-b border-[var(--border-color)] transition-colors duration-300">
+    <div className="bg-white dark:bg-[#1a1a1a] py-0 border-b border-[var(--border-color)] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[var(--border-color)]">
           {stats.map((s, i) => (

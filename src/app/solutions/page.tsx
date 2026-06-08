@@ -35,7 +35,7 @@ const solutions = [
 
 export default function SolutionsPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20">
       <HeroBanner
         title={
           <>
@@ -107,7 +107,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Corporate trust block */}
-      <section className="py-16 bg-white dark:bg-[#0a0f1c] border-t border-gray-200 dark:border-slate-800/40 text-center">
+      <section className="py-16 bg-white dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-slate-800/40 text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-[#101010] dark:text-white mb-4">
             Need a Custom Product Consultation?

@@ -2,7 +2,7 @@
 
 export default function VisionSection() {
   return (
-    <section className="py-20 bg-white dark:bg-[#05080f] border-b border-gray-200 dark:border-slate-800/40">
+    <section className="py-20 bg-white dark:bg-[#111111] border-b border-gray-200 dark:border-slate-800/40">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Images grid */}
@@ -76,7 +76,7 @@ export default function VisionSection() {
             </div>
 
             <a href="#contact" className="theme-btn1 mt-8">
-              Get A Quote <i className="fa-solid fa-arrow-right"></i>
+              Contact Us <i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>

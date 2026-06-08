@@ -37,7 +37,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
       </head>
-      <body className="antialiased font-sans flex flex-col min-h-screen bg-white dark:bg-[#05080f] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <body className="antialiased font-sans flex flex-col min-h-screen bg-white dark:bg-[#111111] text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>
             <Preloader />

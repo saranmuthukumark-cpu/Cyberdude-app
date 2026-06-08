@@ -55,7 +55,7 @@ export default async function BlogDetailPage({
   }
 
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20">
       <HeroBanner
         title={blog.title}
         currentPage={`Insights / Blog Details`}
@@ -63,7 +63,7 @@ export default async function BlogDetailPage({
       />
 
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <article className="bg-white dark:bg-[#0e1628] p-8 md:p-12 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm space-y-6">
+        <article className="bg-white dark:bg-[#222222] p-8 md:p-12 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm space-y-6">
           <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#E47911] pb-4 border-b border-gray-150 dark:border-slate-800 uppercase tracking-wider">
             <span className="bg-orange-50 dark:bg-slate-800 px-3 py-1 rounded-sm">{blog.category}</span>
             <span className="text-gray-400 dark:text-gray-600">•</span>
@@ -77,7 +77,7 @@ export default async function BlogDetailPage({
           </h1>
 
           {/* Author info */}
-          <div className="flex items-center gap-3 bg-[#f8f9fa] dark:bg-[#0a0f1c] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
+          <div className="flex items-center gap-3 bg-[#f8f9fa] dark:bg-[#1a1a1a] p-4 rounded-md border border-gray-200 dark:border-slate-800/60">
             <div className="w-10 h-10 rounded-full bg-[#E47911] text-white flex items-center justify-center font-bold">
               {blog.author.charAt(0)}
             </div>

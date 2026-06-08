@@ -39,7 +39,7 @@ const blogs = [
 
 export default function BlogPage() {
   return (
-    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#05080f] pb-20">
+    <div className="animate-fade-in bg-[#f8f9fa] dark:bg-[#111111] pb-20">
       <HeroBanner
         title={
           <>
@@ -101,7 +101,7 @@ export default function BlogPage() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Category selector */}
-              <div className="bg-white dark:bg-[#0e1628] p-6 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
+              <div className="bg-white dark:bg-[#222222] p-6 rounded-md border border-gray-200 dark:border-slate-800/80 shadow-sm">
                 <h3 className="text-base font-bold text-[#101010] dark:text-white mb-4 pb-2 border-b border-gray-150 dark:border-slate-800">Blog Categories</h3>
                 <div className="space-y-2">
                   {[
@@ -113,17 +113,17 @@ export default function BlogPage() {
                   ].map((cat) => (
                     <button
                       key={cat.label}
-                      className="w-full flex items-center justify-between px-3 py-2 bg-[#f8f9fa] dark:bg-[#0a0f1c] border border-gray-100 dark:border-slate-850 hover:border-[#E47911] text-[#4a4a52] dark:text-gray-300 hover:text-[#E47911] rounded-sm text-xs font-bold transition-all"
+                      className="w-full flex items-center justify-between px-3 py-2 bg-[#f8f9fa] dark:bg-[#1a1a1a] border border-gray-100 dark:border-slate-850 hover:border-[#E47911] text-[#4a4a52] dark:text-gray-300 hover:text-[#E47911] rounded-sm text-xs font-bold transition-all"
                     >
                       <span>{cat.label}</span>
-                      <span className="px-2 py-0.5 bg-white dark:bg-[#0e1628] text-gray-400 dark:text-gray-500 rounded-sm text-[10px] font-bold border border-gray-200 dark:border-slate-800">{cat.count}</span>
+                      <span className="px-2 py-0.5 bg-white dark:bg-[#222222] text-gray-400 dark:text-gray-500 rounded-sm text-[10px] font-bold border border-gray-200 dark:border-slate-800">{cat.count}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Newsletter Sign up */}
-              <div className="bg-[#0a0f1c] dark:bg-[#0e1628] p-8 rounded-md text-white border border-transparent dark:border-slate-800/80">
+              <div className="bg-[#1a1a1a] dark:bg-[#222222] p-8 rounded-md text-white border border-transparent dark:border-slate-800/80">
                 <i className="fa-regular fa-envelope text-4xl text-[#E47911] mb-4 block text-center"></i>
                 <h3 className="text-lg font-bold mb-2 text-center">Subscribe Newsletter</h3>
                 <p className="text-xs text-gray-400 dark:text-gray-400 mb-6 leading-relaxed text-center font-medium">

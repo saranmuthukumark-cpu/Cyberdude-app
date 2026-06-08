@@ -65,7 +65,7 @@ export default function CompanyStoryTabs() {
   const current = tabs[active];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-[#05080f] border-b border-gray-200 dark:border-slate-800/40">
+    <section className="py-20 bg-gray-50 dark:bg-[#111111] border-b border-gray-200 dark:border-slate-800/40">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -86,7 +86,7 @@ export default function CompanyStoryTabs() {
               className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 border ${
                 active === i
                   ? 'bg-[#E47911] text-white border-[#E47911] shadow-sm'
-                  : 'bg-white dark:bg-[#0a0f1c] text-[#4a4a52] dark:text-gray-300 border-gray-200 dark:border-slate-800 hover:border-[#E47911] hover:text-[#E47911]'
+                  : 'bg-white dark:bg-[#1a1a1a] text-[#4a4a52] dark:text-gray-300 border-gray-200 dark:border-slate-800 hover:border-[#E47911] hover:text-[#E47911]'
               }`}
             >
               {tab.year}
@@ -96,7 +96,7 @@ export default function CompanyStoryTabs() {
 
         {/* Tab content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="bg-white dark:bg-[#0a0f1c] rounded-md p-8 shadow-sm border border-gray-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-[#1a1a1a] rounded-md p-8 shadow-sm border border-gray-200 dark:border-slate-800">
             <h3 className="text-xl font-bold text-[#101010] dark:text-white mb-6 border-b border-gray-100 dark:border-slate-800 pb-3">{current.title}</h3>
             <div className="space-y-4">
               {current.content.map((c) => (

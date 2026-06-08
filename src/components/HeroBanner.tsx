@@ -18,7 +18,7 @@ export default function HeroBanner({
       style={{ backgroundImage: 'url(https://cyberdudenetworks.com/assets/img/backgrounds/bg-home-fullscreen.jpg)' }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050810]/95 via-[#050810]/80 to-[#050810]/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/95 via-[#111111]/80 to-[#111111]/40" />
 
       {/* Decorative grid */}
       <div className="absolute inset-0 opacity-[0.03]"

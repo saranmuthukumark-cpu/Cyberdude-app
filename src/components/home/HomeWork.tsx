@@ -18,7 +18,7 @@ export default function HomeWork() {
   ];
 
   return (
-    <div className="section-py bg-white dark:bg-[#05080f] transition-colors duration-300">
+    <div className="section-py bg-white dark:bg-[#111111] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
